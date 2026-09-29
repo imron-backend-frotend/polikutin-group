@@ -1015,6 +1015,68 @@
         icon.classList.remove('text-brand-goldDark');
       }
     }
+
+    // =========================================================================
+    // ДИНАМИЧЕСКИЙ МУЛЬТИЛЕНДИНГ (ГЕНЕРАТОР ПОД ЛЮБОЙ ГОРОД И КОМПАНИЮ НА ЛЕТУ)
+    // Пример: ?c=Байкал-Юрист&city=Улан-Удэ&phone=+79140001122
+    // =========================================================================
+    (function initDynamicMultilanding() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const company = params.get('company') || params.get('c');
+        const city = params.get('city');
+        const phone = params.get('phone');
+
+        if (!company && !city && !phone) return;
+
+        function walkText(node) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            let val = node.nodeValue;
+            if (company) {
+              val = val
+                .replace(/ПОЛИКУТИН ГРУПП/g, company.toUpperCase())
+                .replace(/«Поликутин групп»/gi, `«${company}»`)
+                .replace(/Поликутин групп/gi, company);
+            }
+            if (city) {
+              val = val
+                .replace(/г\.\s*Читы/g, `г. ${city}`)
+                .replace(/г\.\s*Чита/g, `г. ${city}`)
+                .replace(/Чите/g, city)
+                .replace(/Читы/g, city)
+                .replace(/Чита/g, city)
+                .replace(/Забайкальского края/g, city)
+                .replace(/Забайкалья/g, city);
+            }
+            node.nodeValue = val;
+          } else {
+            if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+            for (let child of Array.from(node.childNodes)) {
+              walkText(child);
+            }
+          }
+        }
+
+        walkText(document.body);
+
+        if (company) {
+          document.title = `${company} — Ведение дел в судах ${city ? 'в г. ' + city : ''} | Юридическая защита`;
+        }
+
+        if (phone) {
+          const cleanPhone = phone.replace(/[^0-9]/g, '');
+          document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+            a.href = `tel:+${cleanPhone}`;
+            a.innerText = phone;
+          });
+          document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+            a.href = a.href.replace(/wa\.me\/\d+/, `wa.me/${cleanPhone}`);
+          });
+        }
+      } catch (err) {
+        console.error('Multilanding param error:', err);
+      }
+    })();
   </script>
 
 </body>
