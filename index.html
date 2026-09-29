@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поликутин групп — Ведение дел в судах в г. Чита | Юридическая защита</title>
+  
+  <!-- Геометрические шрифты Montserrat + Manrope с кириллицей -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#c5a880',
+              goldLight: '#e4d5c3',
+              goldDark: '#9f7e52',
+              dark: '#12151b',
+              darkCard: '#181c24',
+              darkCardHover: '#1f242e',
+              darkMuted: '#222733',
+              lightBg: '#fcfbf9',
+              neutralText: '#262930',
+              whatsapp: '#25D366'
+            }
+          },
+          fontFamily: {
+            sans: ['"Montserrat"', '"Manrope"', 'sans-serif'],
+            body: ['"Manrope"', '"Montserrat"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { 
+      scroll-behavior: smooth; 
+      font-family: 'Montserrat', 'Manrope', sans-serif;
+    }
+    
+    .hero-container {
+      border-bottom-left-radius: 110px;
+    }
+    @media (max-width: 768px) {
+      .hero-container {
+        border-bottom-left-radius: 48px;
+      }
+    }
+
+    .lawyer-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lawyer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 35px -10px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand-gold-text {
+      color: #c5a880;
+    }
+
+    /* Анимация пульсации WhatsApp */
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-pulse {
+      animation: pulse-whatsapp 2.2s infinite;
+    }
+
+    /* Аккордеон */
+    .faq-answer {
+      transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+    }
+  </style>
+</head>
+<body class="bg-brand-lightBg text-brand-neutralText font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- ==================== ШАПКА И HERO С ФЕМИДОЙ ==================== -->
+  <header class="relative px-3 pt-3 md:px-6 md:pt-4">
+    <div class="hero-container relative bg-brand-dark overflow-hidden text-white shadow-2xl">
+      
+      <!-- Фоновое изображение со статуей Фемиды (как в референсе) -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=80" 
+          alt="Фемида" 
+          class="w-full h-full object-cover object-right md:object-[80%_center] opacity-40 mix-blend-luminosity filter contrast-125 brightness-95"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-transparent to-brand-dark/40"></div>
+      </div>
+
+      <!-- ВНУТРЕННИЙ КОНТЕНТ ХЕДЕРА -->
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-6 pb-24 md:pb-32">
+        
+        <!-- Навигационная панель -->
+        <nav class="flex items-center justify-between pb-10 border-b border-white/10">
+          
+          <!-- Логотип -->
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-gold to-brand-goldDark flex items-center justify-center text-brand-dark shadow-md shrink-0">
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2L2 7V9H22V7L12 2ZM4 11H7V18H4V11ZM9 11H12V18H9V11ZM14 11H17V18H14V11ZM19 11H22V18H19V11ZM2 20V22H22V20H2Z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="block text-[10px] uppercase tracking-widest text-brand-gold font-bold">Юридическая группа</span>
+              <span class="block text-base md:text-xl font-bold tracking-tight text-white uppercase">ПОЛИКУТИН ГРУПП</span>
+            </div>
+          </div>
+
+          <!-- Меню для десктопа -->
+          <div class="hidden lg:flex items-center gap-8 text-xs font-semibold text-neutral-300 tracking-wider uppercase">
+            <a href="#about" class="hover:text-brand-gold transition-colors">Главная</a>
+            <a href="#experience" class="hover:text-brand-gold transition-colors">Судебный опыт</a>
+            <a href="#cases" class="hover:text-brand-gold transition-colors">Выигранные дела</a>
+            <a href="#quiz" class="hover:text-brand-gold transition-colors">Калькулятор дела</a>
+            <a href="#steps" class="hover:text-brand-gold transition-colors">Этапы работы</a>
+            <a href="#lawyers" class="hover:text-brand-gold transition-colors">Юристы</a>
+            <a href="#faq" class="hover:text-brand-gold transition-colors">Вопросы</a>
+          </div>
+
+          <!-- Контакты и кнопка -->
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex flex-col text-right">
+              <a href="tel:+79240000000" class="text-sm font-bold text-white hover:text-brand-gold transition-colors">+7 (924) 000-00-00</a>
+              <span class="text-[10px] text-neutral-400">г. Чита (2ГИС)</span>
+            </div>
+            <button onclick="openModal()" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-dark hover:bg-brand-goldLight transition-all duration-200 shadow hover:scale-105 active:scale-95">
+              Консультация
+            </button>
+          </div>
+        </nav>
+
+        <!-- Главный оффер -->
+        <div class="mt-14 md:mt-24 max-w-2xl">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-brand-gold text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Ведение дел в судах г. Читы и Забайкальского края
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight leading-[1.12] text-white mb-6">
+            Защита в судах и решения: <br/>
+            <span class="brand-gold-text">Ваш юрист в Чите</span>
+          </h1>
+
+          <p class="font-body text-neutral-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl font-normal opacity-90">
+            Берем на себя полное ведение судебного процесса под ключ: от сбора доказательств и подготовки иска до победного решения и фактического взыскания денег. Без вашего личного присутствия в суде.
+          </p>
+
+          <!-- Кнопки действия -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <button onclick="openModal()" class="px-8 py-4 rounded-full bg-brand-gold hover:bg-brand-goldLight text-brand-dark text-xs sm:text-sm font-bold uppercase tracking-wider transition-all shadow-xl hover:shadow-brand-gold/30 hover:scale-[1.02] text-center">
+              Оценить перспективу дела
+            </button>
+            
+            <!-- ЯРКАЯ КНОПКА WHATSAPP -->
+            <a href="https://wa.me/79240000000?text=Здравствуйте!%20Интересует%20ведение%20дела%20в%20суде%20в%20Чите" target="_blank" class="group px-7 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold tracking-wide flex items-center justify-center gap-3 transition-all shadow-xl hover:shadow-green-500/30 hover:scale-105 active:scale-95">
+              <svg class="w-6 h-6 fill-white shrink-0 group-hover:rotate-12 transition-transform duration-200" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Написать в WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Преимущества в цифрах прямо под кнопками -->
+          <div class="grid grid-cols-3 gap-4 pt-10 mt-10 border-t border-white/10 text-neutral-300">
+            <div>
+              <span class="block text-xl md:text-2xl font-bold text-white">12+ лет</span>
+              <span class="text-[11px] text-neutral-400">судебной практики</span>
+            </div>
+            <div>
+              <span class="block text-xl md:text-2xl font-bold text-white">0 ₽</span>
+              <span class="text-[11px] text-neutral-400">первичный анализ дела</span>
+            </div>
+            <div>
+              <span class="block text-xl md:text-2xl font-bold text-white">100%</span>
+              <span class="text-[11px] text-neutral-400">работа по договору</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== СЕКЦИЯ 2: ВЕСЫ ПРАВОСУДИЯ + ОПЫТ (1 В 1) ==================== -->
+  <section id="experience" class="py-20 lg:py-28 px-6 lg:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Левая часть: 24/7 + Весы -->
+      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div class="mb-4">
+          <span class="text-5xl font-light tracking-tight text-neutral-900 block font-sans">24/7</span>
+          <p class="font-body text-xs text-neutral-500 mt-2 max-w-xs leading-relaxed">
+            Сервис 24/7: Готовы подключиться к защите ваших прав в любое время суток
+          </p>
+        </div>
+
+        <div class="relative w-full max-w-sm mt-6 flex justify-center">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-amber-100/40 rounded-full filter blur-xl"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?auto=format&fit=crop&w=700&q=80" 
+              alt="Весы правосудия" 
+              class="relative z-10 w-72 h-72 md:w-80 md:h-80 object-cover rounded-2xl shadow-xl border border-neutral-200/80 transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая часть: Заголовок и направления -->
+      <div class="lg:col-span-7">
+        <span class="text-xs uppercase tracking-widest text-brand-goldDark font-bold block mb-2">
+          Судебная защита и представительство
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-tight text-neutral-900 mb-6 leading-tight">
+          Наш обширный <br/>
+          <span class="brand-gold-text">судебный опыт</span>
+        </h2>
+
+        <p class="font-body text-neutral-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+          Юридическая компания «Поликутин групп» успешно ведет дела в Арбитражном суде Забайкальского края, Четвертом арбитражном апелляционном суде и судах общей юрисдикции г. Читы.
+        </p>
+        <p class="font-body text-neutral-600 text-sm sm:text-base leading-relaxed mb-10 font-normal">
+          Мы объединяем глубокие практические знания процессуального права, тщательную проработку доказательной базы и непреклонное отстаивание позиций доверителя на всех инстанциях.
+        </p>
+
+        <!-- Два значка направлений -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-neutral-200">
+          
+          <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-100/60 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center shrink-0 text-brand-goldDark">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-neutral-900 text-xs sm:text-sm">Корпоративные и арбитражные споры</h4>
+              <p class="font-body text-[11px] text-neutral-500 mt-0.5">Взыскание дебиторской задолженности, споры по договорам подряда и поставки.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-neutral-100/60 transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center shrink-0 text-brand-goldDark">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-neutral-900 text-xs sm:text-sm">Гражданские споры и недвижимость</h4>
+              <p class="font-body text-[11px] text-neutral-500 mt-0.5">Земельные границы, споры с застройщиками, раздел имущества, взыскание ущерба.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== СЕКЦИЯ 3: СТАТИСТИКА И КАРТОЧКИ ==================== -->
+  <section class="py-10 px-6 lg:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Левый блок: 3 круглых метрики + кнопка -->
+      <div class="lg:col-span-7 space-y-8">
+        <div class="flex flex-wrap items-center gap-4 sm:gap-8">
+          
+          <div class="flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-neutral-300 bg-white shadow-sm p-2 text-center">
+            <span class="text-3xl font-light text-neutral-900 tracking-tight">+200</span>
+            <span class="font-body text-[11px] text-neutral-500 tracking-tight mt-0.5">Дел в год</span>
+          </div>
+
+          <div class="flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-neutral-300 bg-white shadow-sm p-2 text-center">
+            <span class="text-3xl font-light text-neutral-900 tracking-tight">65%</span>
+            <span class="font-body text-[11px] text-neutral-500 tracking-tight mt-0.5">Решений в суде</span>
+          </div>
+
+          <div class="flex flex-col items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-neutral-300 bg-white shadow-sm p-2 text-center">
+            <span class="text-3xl font-light text-neutral-900 tracking-tight">90%</span>
+            <span class="font-body text-[11px] text-neutral-500 tracking-tight mt-0.5">Доверие клиентов</span>
+          </div>
+
+        </div>
+
+        <div>
+          <a href="#lawyers" class="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-neutral-300 bg-white hover:border-brand-gold hover:text-brand-goldDark text-neutral-800 text-xs sm:text-sm font-medium tracking-normal transition-all shadow-sm">
+            <span>Узнайте больше о наших судебных юристах</span>
+            <div class="w-6 h-6 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Правый блок: Две фото-карточки -->
+      <div class="lg:col-span-5 flex items-center gap-4">
+        
+        <div class="w-2/5 bg-white p-3 rounded-2xl border border-neutral-200 shadow-md">
+          <span class="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block mb-2 font-sans">Статьи</span>
+          <img 
+            src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=400&q=80" 
+            alt="Молоток правосудия" 
+            class="w-full h-24 sm:h-28 object-cover rounded-xl mb-2"
+          />
+          <p class="font-body text-[11px] font-semibold text-neutral-700 leading-tight">
+            Гарантия законности и справедливости
+          </p>
+        </div>
+
+        <div class="w-3/5 bg-white p-3 rounded-2xl border border-neutral-200 shadow-md">
+          <img 
+            src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=600&q=80" 
+            alt="Юрист за рабочим столом" 
+            class="w-full h-40 sm:h-44 object-cover rounded-xl"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== НОВЫЙ БЛОК: ИНТЕРАКТИВНЫЙ КВИЗ-КАЛЬКУЛЯТОР ==================== -->
+  <section id="quiz" class="py-16 px-6 lg:px-12 max-w-5xl mx-auto">
+    <div class="bg-brand-dark rounded-3xl p-6 sm:p-10 text-white border border-neutral-800 shadow-2xl relative overflow-hidden">
+      
+      <!-- Фоновый декоративный элемент -->
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-brand-gold/10 filter blur-3xl pointer-events-none"></div>
+
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold block mb-2">Онлайн-тест за 1 минуту</span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+          Рассчитайте шансы на победу <br/>
+          <span class="brand-gold-text">и стоимость ведения дела в суде</span>
+        </h2>
+        <p class="font-body text-xs sm:text-sm text-neutral-400 mt-2">
+          Ответьте на 3 вопроса, чтобы дежурный судебный юрист подготовил правовой алгоритм решения вашей проблемы.
+        </p>
+      </div>
+
+      <!-- Прогресс-бар квиза -->
+      <div class="max-w-md mx-auto mb-8">
+        <div class="flex justify-between text-[11px] text-neutral-400 font-semibold mb-2">
+          <span id="quizStepText">Шаг 1 из 3: Инстанция спора</span>
+          <span id="quizPercentText">33%</span>
+        </div>
+        <div class="w-full h-2 bg-neutral-800 rounded-full overflow-hidden">
+          <div id="quizProgressBar" class="h-full bg-gradient-to-r from-brand-gold to-amber-300 transition-all duration-300 w-1/3"></div>
+        </div>
+      </div>
+
+      <!-- Квиз: Шаг 1 -->
+      <div id="quizStep1" class="quiz-step max-w-xl mx-auto space-y-3">
+        <h4 class="text-sm font-semibold text-neutral-200 mb-2">В какой суд предстоит обращение?</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button onclick="nextQuizStep(2, 'Арбитражный суд')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold hover:bg-neutral-800 text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Арбитражный суд</span>
+            <span class="block text-xs text-neutral-400 mt-1">Для споров ИП и юридических лиц</span>
+          </button>
+          <button onclick="nextQuizStep(2, 'Суд общей юрисдикции')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold hover:bg-neutral-800 text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Районный / Городской суд</span>
+            <span class="block text-xs text-neutral-400 mt-1">Для споров физических лиц</span>
+          </button>
+          <button onclick="nextQuizStep(2, 'Мировой судья')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold hover:bg-neutral-800 text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Мировой суд</span>
+            <span class="block text-xs text-neutral-400 mt-1">Иски до 50 000 / 100 000 руб.</span>
+          </button>
+          <button onclick="nextQuizStep(2, 'Нужна помощь определить')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold hover:bg-neutral-800 text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Пока не знаю</span>
+            <span class="block text-xs text-neutral-400 mt-1">Требуется консультация юриста</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Квиз: Шаг 2 -->
+      <div id="quizStep2" class="quiz-step max-w-xl mx-auto space-y-3 hidden">
+        <h4 class="text-sm font-semibold text-neutral-200 mb-2">Какова суть судебного спора?</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button onclick="nextQuizStep(3, 'Взыскание долга / убытков')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Взыскание долгов / ущерба</span>
+            <span class="block text-xs text-neutral-400 mt-1">По расписке, договору, ДТП</span>
+          </button>
+          <button onclick="nextQuizStep(3, 'Недвижимость и земля')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Земля и недвижимость</span>
+            <span class="block text-xs text-neutral-400 mt-1">Границы, аренда, право собственности</span>
+          </button>
+          <button onclick="nextQuizStep(3, 'Защита от иска оппонента')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Иск предъявлен ко мне</span>
+            <span class="block text-xs text-neutral-400 mt-1">Снижение суммы иска, встречный иск</span>
+          </button>
+          <button onclick="nextQuizStep(3, 'Другая ситуация')" class="p-4 rounded-xl border border-neutral-700 bg-brand-darkCard hover:border-brand-gold text-left transition-all group">
+            <span class="block text-sm font-bold text-white group-hover:text-brand-gold">Другая категория спора</span>
+            <span class="block text-xs text-neutral-400 mt-1">Семейный, трудовой или налоговый</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Квиз: Шаг 3 (Получение результата) -->
+      <div id="quizStep3" class="quiz-step max-w-md mx-auto hidden">
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-700">
+          <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider block mb-1">✓ Данные приняты</span>
+          <h4 class="text-base font-bold text-white mb-2">Куда прислать расчет и оценку перспектив?</h4>
+          <p class="font-body text-xs text-neutral-400 mb-5">
+            Юрист «Поликутин групп» изучит детали и пришлет ориентировочный расчет судебных издержек и прогноз исхода.
+          </p>
+
+          <form onsubmit="finishQuiz(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs text-neutral-300 mb-1">Ваш номер телефона (WhatsApp / звонок)</label>
+              <input type="tel" required placeholder="+7 (___) ___-__-__" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+            </div>
+            <div>
+              <label class="block text-xs text-neutral-300 mb-1">Ваше имя</label>
+              <input type="text" placeholder="Константин" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold">
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-full bg-brand-gold hover:bg-brand-goldLight text-brand-dark font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg">
+              Получить расчет в WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== НОВЫЙ БЛОК: РЕАЛЬНЫЕ ВЫИГРАННЫЕ ДЕЛА (КЕЙСЫ) ==================== -->
+  <section id="cases" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-brand-goldDark font-bold block mb-2">Судебная практика в Чите</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900">
+          Реальные <span class="brand-gold-text">выигранные дела</span>
+        </h2>
+      </div>
+      <p class="font-body text-xs sm:text-sm text-neutral-500 max-w-md mt-4 md:mt-0">
+        Примеры недавних судебных решений в судах г. Читы и Забайкальского края, в которых юристы «Поликутин групп» защитили интересы доверителей.
+      </p>
+    </div>
+
+    <!-- Карточки дел -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Дело 1 -->
+      <div class="bg-white rounded-2xl p-6 border border-neutral-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] uppercase font-bold px-2.5 py-1 rounded bg-amber-50 text-brand-goldDark border border-amber-200/60">
+              Арбитраж
+            </span>
+            <span class="text-xs text-neutral-400 font-mono">Дело А78-***/2025</span>
+          </div>
+          <h3 class="font-bold text-base text-neutral-900 mb-2">
+            Взыскание задолженности по договору подряда
+          </h3>
+          <p class="font-body text-xs text-neutral-600 leading-relaxed mb-4">
+            Заказчик уклонялся от подписания актов КС-2 и КС-3. В Арбитражном суде Забайкальского края доказали фактическое выполнение работ и необоснованность отказа.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+          <div>
+            <span class="block text-[10px] text-neutral-400 uppercase">Взыскано в суде:</span>
+            <span class="text-lg font-bold text-neutral-900">3 450 000 ₽</span>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Иск удовлетворен</span>
+        </div>
+      </div>
+
+      <!-- Дело 2 -->
+      <div class="bg-white rounded-2xl p-6 border border-neutral-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] uppercase font-bold px-2.5 py-1 rounded bg-sky-50 text-sky-700 border border-sky-200/60">
+              Недвижимость
+            </span>
+            <span class="text-xs text-neutral-400 font-mono">Дело 2-****/2025</span>
+          </div>
+          <h3 class="font-bold text-base text-neutral-900 mb-2">
+            Защита права собственности на земельный участок в Чите
+          </h3>
+          <p class="font-body text-xs text-neutral-600 leading-relaxed mb-4">
+            Оспаривание границ смежного участка и предотвращение сноса капитального строения. Добились проведения независимой землеустроительной экспертизы.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+          <div>
+            <span class="block text-[10px] text-neutral-400 uppercase">Сохранено имущество:</span>
+            <span class="text-lg font-bold text-neutral-900">7 200 000 ₽</span>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Победа в суде</span>
+        </div>
+      </div>
+
+      <!-- Дело 3 -->
+      <div class="bg-white rounded-2xl p-6 border border-neutral-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] uppercase font-bold px-2.5 py-1 rounded bg-purple-50 text-purple-700 border border-purple-200/60">
+              Гражданское право
+            </span>
+            <span class="text-xs text-neutral-400 font-mono">Дело 2-****/2025</span>
+          </div>
+          <h3 class="font-bold text-base text-neutral-900 mb-2">
+            Взыскание ущерба и неустойки со страховой компании
+          </h3>
+          <p class="font-body text-xs text-neutral-600 leading-relaxed mb-4">
+            Страховая компания занизила выплату в 4 раза. Через Центральный районный суд г. Читы взыскали полный объем восстановительного ремонта, неустойку и штраф 50%.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+          <div>
+            <span class="block text-[10px] text-neutral-400 uppercase">Взыскано в пользу клиента:</span>
+            <span class="text-lg font-bold text-neutral-900">1 180 000 ₽</span>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Взыскано 100%</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== НОВЫЙ БЛОК: 5 ШАГОВ ВЕДЕНИЯ ДЕЛА ==================== -->
+  <section id="steps" class="py-20 px-6 lg:px-12 bg-neutral-900 text-white">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold block mb-2">Прозрачный регламент</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          Как мы ведем <span class="brand-gold-text">ваше дело в суде</span>
+        </h2>
+        <p class="font-body text-neutral-400 text-xs sm:text-sm mt-3">
+          Вы занимаетесь своими делами — судебные процессы полностью ведут наши юристы по доверенности.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+        
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-800 relative">
+          <span class="text-3xl font-extrabold text-brand-gold/40 block mb-2">01</span>
+          <h4 class="font-bold text-sm text-white mb-2">Анализ документов</h4>
+          <p class="font-body text-xs text-neutral-400 leading-relaxed">Бесплатно оцениваем судебную перспективу и риски до заключения договора.</p>
+        </div>
+
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-800 relative">
+          <span class="text-3xl font-extrabold text-brand-gold/40 block mb-2">02</span>
+          <h4 class="font-bold text-sm text-white mb-2">Досудебная стадия</h4>
+          <p class="font-body text-xs text-neutral-400 leading-relaxed">Составляем грамотную претензию. 30% споров удается решить без затяжных судов.</p>
+        </div>
+
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-800 relative">
+          <span class="text-3xl font-extrabold text-brand-gold/40 block mb-2">03</span>
+          <h4 class="font-bold text-sm text-white mb-2">Подача иска</h4>
+          <p class="font-body text-xs text-neutral-400 leading-relaxed">Формируем железную доказательную базу, подаем иск и накладываем арест на счета оппонента.</p>
+        </div>
+
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-800 relative">
+          <span class="text-3xl font-extrabold text-brand-gold/40 block mb-2">04</span>
+          <h4 class="font-bold text-sm text-white mb-2">Защита в суде</h4>
+          <p class="font-body text-xs text-neutral-400 leading-relaxed">Участвуем во всех судебных заседаниях. Вы не тратите время и нервы в судебных коридорах.</p>
+        </div>
+
+        <div class="bg-brand-darkCard p-6 rounded-2xl border border-neutral-800 relative">
+          <span class="text-3xl font-extrabold text-brand-gold/40 block mb-2">05</span>
+          <h4 class="font-bold text-sm text-white mb-2">Исполнение решения</h4>
+          <p class="font-body text-xs text-neutral-400 leading-relaxed">Получаем исполнительный лист и сопровождаем фактическое взыскание денег через приставов и банки.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== СЕКЦИЯ 4: НАШИ ЮРИСТЫ ==================== -->
+  <section id="lawyers" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-tight text-neutral-900 mb-4">
+        Наши <span class="brand-gold-text">юристы</span>
+      </h2>
+      <p class="font-body text-neutral-500 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
+        Команда высококвалифицированных юристов «Поликутин групп» с многолетним опытом ведения сложных дел в судебных инстанциях Забайкальского края.
+      </p>
+    </div>
+
+    <!-- Сетка из 5 карточек юристов -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      
+      <!-- Карточка 1 -->
+      <div class="lawyer-card bg-brand-darkCard rounded-2xl overflow-hidden border border-neutral-800 text-white shadow-lg flex flex-col justify-between">
+        <div class="relative h-64 overflow-hidden bg-neutral-900">
+          <img 
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" 
+            alt="Алексей Поликутин" 
+            class="w-full h-full object-cover object-top filter brightness-95"
+          />
+        </div>
+        <div class="p-4 bg-brand-darkMuted/60">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-bold text-sm tracking-tight text-white">Алексей Поликутин</h4>
+            <span class="text-brand-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-[11px] text-neutral-400 font-medium mb-3">Арбитражное право</p>
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10 text-neutral-400 text-xs">
+            <a href="https://wa.me/79240000000" target="_blank" title="Написать в WhatsApp" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
+              <svg class="w-4 h-4 fill-current text-green-400 hover:text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:+79240000000" title="Позвонить" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">📞</a>
+            <button onclick="openModal()" title="Записаться" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">✉️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class="lawyer-card bg-brand-darkCard rounded-2xl overflow-hidden border border-neutral-800 text-white shadow-lg flex flex-col justify-between">
+        <div class="relative h-64 overflow-hidden bg-neutral-900">
+          <img 
+            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" 
+            alt="Михаил Соколов" 
+            class="w-full h-full object-cover object-top filter brightness-95"
+          />
+        </div>
+        <div class="p-4 bg-brand-darkMuted/60">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-bold text-sm tracking-tight text-white">Михаил Соколов</h4>
+            <span class="text-brand-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-[11px] text-neutral-400 font-medium mb-3">Гражданское право</p>
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10 text-neutral-400 text-xs">
+            <a href="https://wa.me/79240000000" target="_blank" title="Написать в WhatsApp" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
+              <svg class="w-4 h-4 fill-current text-green-400 hover:text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:+79240000000" title="Позвонить" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">📞</a>
+            <button onclick="openModal()" title="Записаться" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">✉️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class="lawyer-card bg-brand-darkCard rounded-2xl overflow-hidden border border-neutral-800 text-white shadow-lg flex flex-col justify-between">
+        <div class="relative h-64 overflow-hidden bg-neutral-900">
+          <img 
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+            alt="Анна Ковалева" 
+            class="w-full h-full object-cover object-top filter brightness-95"
+          />
+        </div>
+        <div class="p-4 bg-brand-darkMuted/60">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-bold text-sm tracking-tight text-white">Анна Ковалева</h4>
+            <span class="text-brand-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-[11px] text-neutral-400 font-medium mb-3">Земельные споры</p>
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10 text-neutral-400 text-xs">
+            <a href="https://wa.me/79240000000" target="_blank" title="Написать в WhatsApp" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
+              <svg class="w-4 h-4 fill-current text-green-400 hover:text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:+79240000000" title="Позвонить" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">📞</a>
+            <button onclick="openModal()" title="Записаться" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">✉️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 4 -->
+      <div class="lawyer-card bg-brand-darkCard rounded-2xl overflow-hidden border border-neutral-800 text-white shadow-lg flex flex-col justify-between">
+        <div class="relative h-64 overflow-hidden bg-neutral-900">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+            alt="Сергей Ильин" 
+            class="w-full h-full object-cover object-top filter brightness-95"
+          />
+        </div>
+        <div class="p-4 bg-brand-darkMuted/60">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-bold text-sm tracking-tight text-white">Сергей Ильин</h4>
+            <span class="text-brand-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-[11px] text-neutral-400 font-medium mb-3">Договорные споры</p>
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10 text-neutral-400 text-xs">
+            <a href="https://wa.me/79240000000" target="_blank" title="Написать в WhatsApp" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
+              <svg class="w-4 h-4 fill-current text-green-400 hover:text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:+79240000000" title="Позвонить" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">📞</a>
+            <button onclick="openModal()" title="Записаться" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">✉️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 5 -->
+      <div class="lawyer-card bg-brand-darkCard rounded-2xl overflow-hidden border border-neutral-800 text-white shadow-lg flex flex-col justify-between">
+        <div class="relative h-64 overflow-hidden bg-neutral-900">
+          <img 
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" 
+            alt="Мария Осипова" 
+            class="w-full h-full object-cover object-top filter brightness-95"
+          />
+        </div>
+        <div class="p-4 bg-brand-darkMuted/60">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-bold text-sm tracking-tight text-white">Мария Осипова</h4>
+            <span class="text-brand-gold">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+          </div>
+          <p class="font-body text-[11px] text-neutral-400 font-medium mb-3">Налоговые споры</p>
+          <div class="flex items-center gap-2 pt-2 border-t border-white/10 text-neutral-400 text-xs">
+            <a href="https://wa.me/79240000000" target="_blank" title="Написать в WhatsApp" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-colors">
+              <svg class="w-4 h-4 fill-current text-green-400 hover:text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <a href="tel:+79240000000" title="Позвонить" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">📞</a>
+            <button onclick="openModal()" title="Записаться" class="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-gold hover:text-brand-dark transition-colors">✉️</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex items-center justify-center gap-2 mt-10">
+      <span class="w-2.5 h-2.5 rounded-full bg-brand-gold"></span>
+      <span class="w-2.5 h-2.5 rounded-full bg-neutral-300"></span>
+    </div>
+
+  </section>
+
+
+  <!-- ==================== НОВЫЙ БЛОК: ГАРАНТИИ ==================== -->
+  <section class="py-16 px-6 lg:px-12 bg-neutral-100/70 border-y border-neutral-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark font-bold mb-4">
+            ⚖️
+          </div>
+          <h4 class="font-bold text-sm text-neutral-900 mb-1">Без скрытых доплат</h4>
+          <p class="font-body text-xs text-neutral-500">Стоимость услуг фиксируется в официальном договоре и не меняется до вынесения решения.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark font-bold mb-4">
+            💰
+          </div>
+          <h4 class="font-bold text-sm text-neutral-900 mb-1">Возврат расходов</h4>
+          <p class="font-body text-xs text-neutral-500">По закону мы взыскиваем затраты на оплату услуг юриста с проигравшей стороны спора.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark font-bold mb-4">
+            🔒
+          </div>
+          <h4 class="font-bold text-sm text-neutral-900 mb-1">Конфиденциальность</h4>
+          <p class="font-body text-xs text-neutral-500">Строгое соблюдение профессиональной тайны и защита коммерческой информации.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-neutral-200">
+          <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark font-bold mb-4">
+            📱
+          </div>
+          <h4 class="font-bold text-sm text-neutral-900 mb-1">Постоянная связь</h4>
+          <p class="font-body text-xs text-neutral-500">Персональный юрист на связи в мессенджере. Регулярные отчеты после каждого заседания.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== НОВЫЙ БЛОК: ЧАСТЫЕ ВОПРОСЫ (FAQ) ==================== -->
+  <section id="faq" class="py-20 px-6 lg:px-12 max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-widest text-brand-goldDark font-bold block mb-2">Ответы юриста</span>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+        Частые вопросы <span class="brand-gold-text">о судебных делах</span>
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      
+      <div class="border border-neutral-200 rounded-2xl bg-white overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-sm sm:text-base text-neutral-900 flex items-center justify-between hover:text-brand-goldDark transition-colors">
+          <span>Нужно ли мне лично ходить на судебные заседания?</span>
+          <span id="faqIcon1" class="text-xl text-neutral-400">＋</span>
+        </button>
+        <div id="faqContent1" class="faq-answer px-5 pb-5 font-body text-xs sm:text-sm text-neutral-600 hidden">
+          Нет. Мы оформляем нотариальную доверенность (или доверенность от юридического лица), после чего юрист берет на себя все заседания. Вы можете спокойно заниматься бизнесом или семьей, не тратя нервы на судебные прения.
+        </div>
+      </div>
+
+      <div class="border border-neutral-200 rounded-2xl bg-white overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-sm sm:text-base text-neutral-900 flex items-center justify-between hover:text-brand-goldDark transition-colors">
+          <span>Сколько времени занимает судебный процесс в Чите?</span>
+          <span id="faqIcon2" class="text-xl text-neutral-400">＋</span>
+        </button>
+        <div id="faqContent2" class="faq-answer px-5 pb-5 font-body text-xs sm:text-sm text-neutral-600 hidden">
+          В среднем суд первой инстанции длится от 2 до 5 месяцев в зависимости от сложности дела и необходимости проведения судебных экспертиз. Мы предпринимаем все процессуальные меры для предотвращения умышленного затягивания процесса ответчиком.
+        </div>
+      </div>
+
+      <div class="border border-neutral-200 rounded-2xl bg-white overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-sm sm:text-base text-neutral-900 flex items-center justify-between hover:text-brand-goldDark transition-colors">
+          <span>Вернет ли проигравшая сторона деньги, потраченные на ваши услуги?</span>
+          <span id="faqIcon3" class="text-xl text-neutral-400">＋</span>
+        </button>
+        <div id="faqContent3" class="faq-answer px-5 pb-5 font-body text-xs sm:text-sm text-neutral-600 hidden">
+          Да. Согласно ст. 100 ГПК РФ и ст. 110 АПК РФ, судебные расходы на оплату услуг представителя присуждаются стороне, в пользу которой состоялось решение суда. Мы готовим и подаем заявление о взыскании судебных расходов с оппонента.
+        </div>
+      </div>
+
+      <div class="border border-neutral-200 rounded-2xl bg-white overflow-hidden shadow-sm">
+        <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-bold text-sm sm:text-base text-neutral-900 flex items-center justify-between hover:text-brand-goldDark transition-colors">
+          <span>Что делать, если у меня нет на руках всех нужных документов?</span>
+          <span id="faqIcon4" class="text-xl text-neutral-400">＋</span>
+        </button>
+        <div id="faqContent4" class="faq-answer px-5 pb-5 font-body text-xs sm:text-sm text-neutral-600 hidden">
+          Юристы «Поликутин групп» имеют право направлять официальные адвокатские и судебные запросы в Росреестр, банки, налоговые органы, МВД и архивы для истребования необходимых доказательств по вашему делу.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== ФУТЕР И КОНТАКТЫ ==================== -->
+  <footer id="contacts" class="bg-brand-dark text-white pt-16 pb-12 px-6 lg:px-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/10">
+      
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-brand-gold flex items-center justify-center text-brand-dark font-bold">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 7V9H22V7L12 2ZM4 11H7V18H4V11ZM9 11H12V18H9V11ZM14 11H17V18H14V11ZM19 11H22V18H19V11ZM2 20V22H22V20H2Z"/></svg>
+          </div>
+          <span class="text-base font-bold uppercase tracking-wider">Поликутин групп</span>
+        </div>
+        <p class="font-body text-neutral-400 text-xs leading-relaxed max-w-sm">
+          Профессиональное судебное представительство интересов физических и юридических лиц в г. Чита и Забайкальском крае.
+        </p>
+      </div>
+
+      <div>
+        <h5 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-4">Контакты офиса в Чите</h5>
+        <ul class="font-body space-y-2.5 text-xs text-neutral-300">
+          <li class="flex items-center gap-2">
+            <span>📍</span>
+            <span>г. Чита (карточка компании в 2ГИС)</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>📞</span>
+            <a href="tel:+79240000000" class="hover:text-brand-gold transition-colors font-bold">+7 (924) 000-00-00</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>⏰</span>
+            <span>Пн–Пт: 09:00 – 18:00 (по предварительной записи)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-xs uppercase tracking-widest text-brand-gold font-bold mb-4">Мгновенная консультация</h5>
+        <p class="font-body text-xs text-neutral-400 mb-4">
+          Напишите в WhatsApp, чтобы получить экспресс-оценку перспектив вашего дела уже сегодня.
+        </p>
+        <a href="https://wa.me/79240000000" target="_blank" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold tracking-wide transition-all shadow-lg hover:shadow-green-500/25 hover:scale-105">
+          <svg class="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>Написать в WhatsApp</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-500 font-body">
+      <span>© 2026 Юридическая компания «Поликутин групп». Все права защищены.</span>
+      <span class="mt-2 sm:mt-0">Разработка и упаковка сайтов для юристов</span>
+    </div>
+  </footer>
+
+
+  <!-- ==================== ПЛАВАЮЩИЙ БОЛЬШОЙ ВИДЖЕТ WHATSAPP ==================== -->
+  <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+    <a href="https://wa.me/79240000000?text=Здравствуйте!%20Хочу%20проконсультироваться%20по%20судебному%20делу%20в%20Чите" target="_blank" class="hidden sm:flex items-center bg-white text-neutral-800 text-xs font-bold py-2.5 px-4 rounded-full shadow-2xl border border-neutral-200 hover:border-brand-whatsapp hover:text-brand-whatsapp transition-all">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-ping"></span>
+      <span>Юрист онлайн в WhatsApp</span>
+    </a>
+
+    <a href="https://wa.me/79240000000?text=Здравствуйте!%20Хочу%20проконсультироваться%20по%20судебному%20делу%20в%20Чите" target="_blank" class="whatsapp-pulse w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95 group">
+      <svg class="w-8 h-8 sm:w-9 sm:h-9 fill-white group-hover:rotate-12 transition-transform duration-200" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+  </div>
+
+
+  <!-- ==================== МОДАЛЬНОЕ ОКНО ==================== -->
+  <div id="leadModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-brand-dark border border-neutral-700 w-full max-w-md rounded-3xl p-6 sm:p-8 text-white relative shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-neutral-400 hover:text-white text-xl">✕</button>
+      
+      <div class="text-center mb-6">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-bold block mb-1">Поликутин групп</span>
+        <h3 class="text-xl font-bold">Оценка перспектив дела</h3>
+        <p class="font-body text-xs text-neutral-400 mt-1">Оставьте контакт — юрист свяжется с вами в течение 15 минут</p>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-4 font-body">
+        <div>
+          <label class="block text-xs text-neutral-400 mb-1">Ваше имя</label>
+          <input type="text" required placeholder="Константин" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold font-sans">
+        </div>
+        <div>
+          <label class="block text-xs text-neutral-400 mb-1">Номер телефона</label>
+          <input type="tel" required placeholder="+7 (___) ___-__-__" class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold font-sans">
+        </div>
+        <div>
+          <label class="block text-xs text-neutral-400 mb-1">В чем суть спора?</label>
+          <textarea rows="3" placeholder="Кратко опишите ситуацию..." class="w-full bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-gold font-sans"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-full bg-brand-gold hover:bg-brand-goldLight text-brand-dark font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-lg mt-2 font-sans">
+          Отправить на разбор юристу
+        </button>
+        <p class="text-[10px] text-neutral-500 text-center">Конфиденциально. Ваши данные защищены.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- СКРИПТЫ: КВИЗ, МОДАЛЬНЫЕ ОКНА И FAQ -->
+  <script>
+    // Модальное окно
+    function openModal() {
+      document.getElementById('leadModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('leadModal').classList.add('hidden');
+    }
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert('Спасибо за заявку! Запрос передан дежурному судебному юристу «Поликутин групп».');
+      closeModal();
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('leadModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Интерактивный квиз
+    let quizData = {};
+    function nextQuizStep(step, val) {
+      if (step === 2) {
+        quizData.court = val;
+        document.getElementById('quizStep1').classList.add('hidden');
+        document.getElementById('quizStep2').classList.remove('hidden');
+        document.getElementById('quizStepText').innerText = 'Шаг 2 из 3: Суть спора';
+        document.getElementById('quizPercentText').innerText = '66%';
+        document.getElementById('quizProgressBar').style.width = '66%';
+      } else if (step === 3) {
+        quizData.type = val;
+        document.getElementById('quizStep2').classList.add('hidden');
+        document.getElementById('quizStep3').classList.remove('hidden');
+        document.getElementById('quizStepText').innerText = 'Шаг 3 из 3: Получение расчета';
+        document.getElementById('quizPercentText').innerText = '100%';
+        document.getElementById('quizProgressBar').style.width = '100%';
+      }
+    }
+    function finishQuiz(e) {
+      e.preventDefault();
+      alert('Спасибо! Расчет и предварительная стратегия по делу формируются и будут отправлены вам в WhatsApp.');
+      document.getElementById('quizStep3').innerHTML = `
+        <div class="text-center p-8 bg-brand-darkCard rounded-2xl border border-emerald-500/40">
+          <span class="text-4xl block mb-2">🎉</span>
+          <h4 class="text-lg font-bold text-white mb-2">Запрос успешно отправлен!</h4>
+          <p class="font-body text-xs text-neutral-300">Дежурный юрист свяжется с вами в течение 10–15 минут.</p>
+        </div>
+      `;
+    }
+
+    // Аккордеон FAQ
+    function toggleFaq(id) {
+      const content = document.getElementById('faqContent' + id);
+      const icon = document.getElementById('faqIcon' + id);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.innerText = '✕';
+        icon.classList.add('text-brand-goldDark');
+      } else {
+        content.classList.add('hidden');
+        icon.innerText = '＋';
+        icon.classList.remove('text-brand-goldDark');
+      }
+    }
+  </script>
+
+</body>
+</html>
