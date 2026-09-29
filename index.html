@@ -1063,14 +1063,22 @@
           document.title = `${company} — Ведение дел в судах ${city ? 'в г. ' + city : ''} | Юридическая защита`;
         }
 
-        if (phone) {
-          const cleanPhone = phone.replace(/[^0-9]/g, '');
-          document.querySelectorAll('a[href^="tel:"]').forEach(a => {
-            a.href = `tel:+${cleanPhone}`;
-            a.innerText = phone;
-          });
+        if (phone || city || company) {
+          const cleanPhone = phone ? phone.replace(/[^0-9]/g, '') : '79240000000';
+          const cityName = city || 'Чите';
+          const compName = company ? ` («${company}»)` : '';
+          const defaultMsg = `Здравствуйте! Хочу получить консультацию по судебному делу в г. ${cityName}${compName}.`;
+          const encodedMsg = encodeURIComponent(defaultMsg);
+
+          if (phone) {
+            document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+              a.href = `tel:+${cleanPhone}`;
+              a.innerText = phone;
+            });
+          }
+
           document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-            a.href = a.href.replace(/wa\.me\/\d+/, `wa.me/${cleanPhone}`);
+            a.href = `https://web.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMsg}`;
           });
         }
       } catch (err) {
